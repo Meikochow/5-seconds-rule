@@ -25,15 +25,14 @@ class App extends Component {
       return (
         <div className="App">
          <h2>Welcome to the</h2>
-         <h1>5 SECONDS RULE!</h1>
-        <button className="letsGo" onClick={this.startGame}>Let's GO!</button>
+         <h1 className="appName">5 SECONDS RULE!</h1>
+        <button className="letsGo" onMouseDown={this.startGame} onTouchStart={this.startGame}>Lets GO!</button>
         <h4>Once you press AND Hold the button you will be displayed your theme and the timer starts</h4>
-          <h3>Name 3 things + release the button = YOU WIN!</h3>
-          <h3>Fail to name + Hold The button = YOU LOSE!</h3>
+          <h3>Name 3 things + RELEASE the button = YOU WIN!</h3>
+          <h3>Fail + HOLD The button = YOU LOSE!</h3>
         </div>
       );
-    }
-
+      }
   }
 }
 

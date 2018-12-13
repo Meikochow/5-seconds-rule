@@ -1,4 +1,20 @@
-
+body{
+  background: rgb(192, 227, 255);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.appName{
+  box-shadow:0px 0px 3px black;
+  width:300px;
+  margin:10px auto 20px auto;
+  border-radius:30px;
+  padding:10px;
+  background:rgb(248, 208, 214);
+}
 .unclicked{
   box-shadow:0px 0px 20px black; 
   height:200px;
@@ -45,37 +61,61 @@ outline:none;
  }
 .visible{
   opacity:1;
-border:1px solid black;
+  box-shadow:0px 0px 5px black;
   border-radius:20px;
- padding:10px;
-  font-size:30px;
+  padding:10px;
+  font-size:35px;
+  max-width:600px;
+  width:auto;
+  margin:auto;
+  background:white;
 }
 .invisible{
-  opacity:0;
-  border:1px solid black;
+  opacity:1;
+  color:rgb(192, 227, 255);;
+  box-shadow:0px 0px 5px black;
   border-radius:20px;
- padding:10px;
-  font-size:30px;
+  padding:10px;
+  font-size:35px;
+  max-width:600px;
+  width:auto;
+  /* min-width:40%; */
+  margin:auto;
 }
 .letsGo{
-height:150px;
+height:100px;
 width:150px;
 margin:auto;
 border-radius:750px;
 border:none;
-box-shadow:0px 0px 10px black;
-background:white;
+box-shadow:0px 0px 10px rgb(100, 100, 233);
 text-align:center;
 outline:none;
+font-size:24px;
+font-family:"Arial";
+background:rgb(225, 242, 255);
+}
+.letsGo:hover{
+  box-shadow:0px 0px 30px blue;
+  background: rgb(192, 227, 255);
 }
 .game{
   font-family:"Cantarell";
 }
 .text1{
-  box-shadow:0px 0px 10px black;
-  width:90%;
+  /* box-shadow:0px 0px 10px black; */
+  width:140px;
   margin:10px auto 10px auto;
+  /* box-shadow:0px 0px 1px black; */
 }
-.text2{
-  box-shadow:0px 0px 30px black;
+.timer{
+  font-size:50px;
+  box-shadow: 0px 0px 10px black;
+  width:70px;
+  height:70px;
+  line-height:70px;
+  margin:10px auto 10px auto;
+  border-radius:35px;
+  background:white;
+  font-family:"Orbitron";
 }
