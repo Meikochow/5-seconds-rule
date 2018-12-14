@@ -8,7 +8,7 @@ class CatchButton extends Component {
             phrases:[
              "Car Brands", "Clothing Brands", "Tech Brands","Fast Food Brands","Alcohol Brands","Fashion Brands","Cosmetics Brands",
              "Bald Celebrities", "Tall People","Tall Celebrities", "Short Celebrities","Actors","Rappers","American Presidents","Moldovan Presidents","Bad Actors","TV Shows","Musicians","Metal Bands","Famous Painters","Famous Inventors","Famous Youtubers","Celebrity Crushes","Celebrity Blondes","Sport Teams",
-             "PornStars","Sex Positions","Curse Words","Funny Sounds","Sad Sounds","Weird Sounds","Fart Sounds","Creepy Sounds","Funny Words","Types of Laughter",
+             "PornStars","Curse Words","Funny Sounds","Sad Sounds","Weird Sounds","Fart Sounds","Creepy Sounds","Funny Words","Types of Laughter",
              "Girl Names","Boy Names","Dog Names","Cat Names","Russian Names","American Names","Romanian Names",
              "Antonyms of 'Good'", "Antonyms of 'Pretty'","Antonyms of 'Funny'","Antonyms of 'Slow'","Antonyms of 'Sad'",
              "Synonyms of 'Butt'","Synonyms of 'Stupid'", "Synonyms of 'Funny'","Synonyms of 'Lazy'", "Synonyms of 'Hard'",
@@ -24,7 +24,8 @@ class CatchButton extends Component {
              "Eat on Bread","Eat with wine","Eat With Spoon","Eat with Fork","Eat with Hands",
              "Foods you HATE", "Foods you LOVE","Animals you Like","Animals you are afraid of","Beautiful WOMEN","Beautiful MEN"
             ],
-            placeHolder:["🐛","👽","⛄","👾","🐵","🐲","🦄","🧠","😼","😸", "🐱", "👤","🐱","🐭","🐹","🐰","🦍","🐊","🐍","🦖","🦑","🐳","🕊","🐝","🐦","🐣"],
+            backUp:[],
+            placeHolder:["🐛","👽","⛄","👾","🐵","🐲","🦄","😼","😸", "🐱", "👤","🐱","🐭","🐹","🐰","🐊","🐍","🐳","🕊","🐝","🐦","🐣"],
             phrase:"🗣",
             timer:'5',
             message:"Press and hold to start game",
@@ -33,12 +34,24 @@ class CatchButton extends Component {
         }
     }
 touchStartHandler = () => {
+
+     let random = this.getRandom();
+     let randomPhrase = this.state.phrases[random]
+     let addBackUp = [...this.state.backUp,randomPhrase];
+     let updatedPhrases = this.state.phrases;
+     updatedPhrases.splice(random,1);
     this.setState({
         timer:5,
-        phrase:this.state.phrases[Math.floor(this.state.phrases.length*Math.random())],
+        phrase:randomPhrase,
+        backUp:addBackUp,
+        phrases:updatedPhrases
     })
+    if(this.state.phrases.length===0){
+    this.setState({phrases:[...this.state.backUp,randomPhrase],backUp:[]});
+    }
     var intervalId = setInterval(this.countTime, 1000);
     this.setState({intervalId: intervalId});
+
 }
 
 touchEndHandler = () => {
@@ -95,6 +108,9 @@ if(this.state.timer ===0){
 
 pressure(){
     this.setState({pressure:"hsl("+this.state.timer*20+", 100%, 50%)"});
+}
+getRandom = function(){
+        return Math.floor(Math.random()*this.state.phrases.length)
 }
   render() {
     return (
