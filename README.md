@@ -1,3 +1,3 @@
 # A React 5-Seconds-Rule Game
 
-[See it live](https://5-seconds-rule.glitch.me/)
+#See it live [-->HERE<--](https://5-seconds-rule.glitch.me/)
