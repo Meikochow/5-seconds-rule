@@ -1,5 +1,4 @@
 body{
-  background: rgb(192, 227, 255);
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -7,97 +6,70 @@ body{
   -ms-user-select: none;
   user-select: none;
 }
+.App{
+  /* border:1px solid brown; */
+  box-shadow:3px 3px 15px 6px grey;
+  width:270px;
+  margin:15px auto 0px auto;
+  padding:10px 5px 10px 5px;
+  border-radius:20px;
+  background: linear-gradient(to top left, #c0c0c0 25%, #ffffff 100%);
+}
 .appName{
-  box-shadow:0px 0px 3px black;
-  width:300px;
+  /* box-shadow:0px 0px 1px 1px black; */
+  width:260px;
   margin:10px auto 20px auto;
-  border-radius:30px;
-  padding:10px;
-  background:rgb(248, 208, 214);
+  /* border-radius:30px; */
+  padding:0px 10px 10px 10px;
+  background:none;
+  font-size:22px;
+  height:36px;
+  line-height:0px;
+  font-family:"Orbitron"
 }
-.unclicked{
-  box-shadow:0px 0px 20px black; 
+#mainBtn{
+  box-shadow:0px 0px 0px 5px grey; 
   height:200px;
-width:200px;
-margin:auto;
-border-radius:100px;
-border:none;
-background:white;
-text-align:center;
-outline:none;
-}
-.clicked{
-  box-shadow:0px -10px 20px black; 
-  height:200px;
-width:200px;
-margin:auto;
-border-radius:100px;
-border:none;
-background:white;
-text-align:center;
-outline:none;
-}
-.won{
-  box-shadow:0px 0px 60px green;
-  height:200px;
-width:200px;
-margin:auto;
-border-radius:100px;
-border:none;
-background:white;
-text-align:center;
-outline:none;
- }
- .lost{
-   box-shadow:0px 0px 60px red;
-   height:200px;
-width:200px;
-margin:auto;
-border-radius:100px;
-border:none;
-background:white;
-text-align:center;
-outline:none;
- }
-.visible{
-  opacity:1;
-  box-shadow:0px 0px 5px black;
-  border-radius:20px;
-  padding:10px;
-  font-size:35px;
-  max-width:600px;
-  width:auto;
-  margin:auto;
+  width:200px;
+  margin:10px auto 10px auto;
+  border-radius:100px;
+  border:none;
   background:white;
+  text-align:center;
+  outline:none;
 }
-.invisible{
+#mainBtn:active{
+  box-shadow:0px 0px 20px 10px grey; 
+}
+
+.screen{
   opacity:1;
-  color:rgb(192, 227, 255);;
-  box-shadow:0px 0px 5px black;
+  border:3px double grey;
   border-radius:20px;
   padding:10px;
   font-size:35px;
-  max-width:600px;
-  width:auto;
-  /* min-width:40%; */
-  margin:auto;
+  width:230px;
+  margin:0px auto 10px auto;
+  background:white;
+  color:black;
+  height:100px;
+  z-index:9999;
 }
 .letsGo{
-height:100px;
+height:150px;
 width:150px;
 margin:auto;
 border-radius:750px;
 border:none;
-box-shadow:0px 0px 10px rgb(100, 100, 233);
+box-shadow:0px 0px 20px 5px grey;
 text-align:center;
 outline:none;
-font-size:24px;
+font-size:36px;
 font-family:"Arial";
-background:rgb(225, 242, 255);
+background:rgb(99, 252, 106);
 }
 .letsGo:hover{
-  box-shadow:0px 0px 30px blue;
-  background: rgb(192, 227, 255);
+  box-shadow:0px 0px 0px 3px grey;
 }
 .game{
   font-family:"Cantarell";
@@ -109,12 +81,13 @@ background:rgb(225, 242, 255);
   /* box-shadow:0px 0px 1px black; */
 }
 .timer{
-  font-size:50px;
-  box-shadow: 0px 0px 10px black;
-  width:70px;
-  height:70px;
-  line-height:70px;
-  margin:10px auto 10px auto;
+  font-size:30px;
+  text-shadow: 0px 0px 20px white;
+  /* width:40px;
+  height:40px; */
+  /* line-height:70px; */
+  /* margin:10px auto 10px auto; */
+  display:inline-block;
   border-radius:35px;
   background:white;
   font-family:"Orbitron";

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import CatchButton from './components/catchButton';
+import { progressSounds, winSounds, lostSounds } from './components/sounds';
 
 class App extends Component {
   constructor(props){
@@ -9,6 +10,11 @@ class App extends Component {
       started:false
     }
   }
+  componentWillMount(){
+    progressSounds();
+    lostSounds();
+    winSounds();
+}
   startGame = () => {
     this.setState({
       started:true
@@ -25,11 +31,16 @@ class App extends Component {
       return (
         <div className="App">
          <h2>Welcome to the</h2>
-         <h1 className="appName">5 SECONDS RULE!</h1>
-        <button className="letsGo" onMouseDown={this.startGame} onTouchStart={this.startGame}>Lets GO!</button>
-        <h4>Once you press AND Hold the button you will be displayed your theme and the timer starts</h4>
-          <h3>Name 3 things + RELEASE the button = YOU WIN!</h3>
-          <h3>Fail + HOLD The button = YOU LOSE!</h3>
+         <h2 className="appName">5 SECONDS RULES!</h2>
+
+         <button className="letsGo" onMouseDown={this.startGame} onTouchStart={this.startGame}>GO!</button>
+          <h2>It's simple!</h2>
+          <h3>Press and Hold</h3>
+           <h3>Name 3 things in 5 seconds</h3>
+           <h3>Release!</h3>
+         {/* <h3>NAME + RELEASE = WIN!</h3>
+         <h3>OR</h3>
+         <h3>FAIL + HOLD = LOSE!</h3> */}
         </div>
       );
       }
